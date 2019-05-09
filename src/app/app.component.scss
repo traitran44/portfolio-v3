@@ -28,6 +28,8 @@
 
 .active-link {
   font-weight: bold;
+  border-right: black thin solid;
+
 }
 
 .leaf-active-link {
@@ -36,4 +38,16 @@
 
 .right-border {
   border-right: lightgrey thin solid;
+}
+
+.right-border-dash {
+  border-right: lightgrey thin dashed;
+}
+
+.right-border-dash:hover {
+  border-right: grey thin dashed;
+}
+
+.content {
+  padding-left: 10%;
 }

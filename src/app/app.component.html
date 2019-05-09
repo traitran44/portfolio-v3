@@ -1,14 +1,14 @@
 <div class="container" fxLayout="row">
-  <div fxFlex="25" fxLayoutAlign="start center">
+  <div fxFlex="20" fxLayoutAlign="start center">
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree-scroll">
       <!-- This is the tree node template for leaf nodes -->
       <mat-tree-node *matTreeNodeDef="let node;" matTreeNodePadding
                      fxLayout="row" fxLayoutGap="8px"
-                     class="can-scroll">
+                     class="can-scroll right-border-dash">
         <button mat-icon-button disabled></button>
-        <mat-icon *ngIf="rla.isActive" fxLayoutAlign="center center">code</mat-icon>
+        <mat-icon *ngIf="rlaLeaf.isActive" fxLayoutAlign="center center">code</mat-icon>
         <span (click)="handleRoute(node)"
-              routerLink="{{node.route}}" routerLinkActive="leaf-active-link" #rla="routerLinkActive"
+              routerLink="{{node.route}}" routerLinkActive="leaf-active-link" #rlaLeaf="routerLinkActive"
               class="can-navigate">
           {{node.name}}
         </span>
@@ -16,7 +16,9 @@
 
       <!-- This is the tree node template for expandable nodes -->
       <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding
-                     class="can-scroll right-border">
+                     class="can-scroll"
+                     #rlaParent="routerLinkActive"
+                     routerLink="{{node.route}}" routerLinkActive="active-link">
         <button mat-icon-button matTreeNodeToggle
                 [attr.aria-label]="'toggle ' + node.name">
           <mat-icon class="mat-icon-rtl-mirror">
@@ -30,7 +32,7 @@
 
     </mat-tree>
   </div>
-  <div fxFlex="75">
+  <div fxFlex="80" class="content">
     <router-outlet></router-outlet>
   </div>
 </div>

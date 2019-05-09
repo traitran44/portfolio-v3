@@ -5,6 +5,7 @@ import {BioRoutingModule} from './bio-routing.module';
 import {IntroComponent} from './intro/intro.component';
 import { ResumeComponent } from './resume/resume.component';
 import {MaterialModule} from '../material.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [IntroComponent, ResumeComponent],
@@ -12,6 +13,7 @@ import {MaterialModule} from '../material.module';
     CommonModule,
     BioRoutingModule,
     MaterialModule,
+    FlexLayoutModule,
   ],
   exports: [
     IntroComponent,
