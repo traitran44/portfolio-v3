@@ -12,8 +12,32 @@
 }
 
 .gt-icon {
+  height: 300px;
+  width: 300px;
   border: lightgrey thin solid;
   -webkit-border-radius: 220px;
   -moz-border-radius: 220px;
   border-radius: 220px;
+}
+
+.header-divider {
+  width: 100%;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  color: darkgrey;
+}
+
+.intro-divider {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  transform: rotate(2deg);
+  color: darkgrey;
+}
+
+.intro-container {
 }

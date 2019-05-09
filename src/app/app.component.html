@@ -1,6 +1,6 @@
 <div class="container" fxLayout="row">
-  <div fxFlex="20" fxLayoutAlign="start center">
-    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree-scroll">
+  <div fxFlex="20" fxLayoutAlign="start center" #treeContainer>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" [className]="'tree-scroll'" [ngStyle]="{'width': treeContainer.clientWidth + 'px'}">
       <!-- This is the tree node template for leaf nodes -->
       <mat-tree-node *matTreeNodeDef="let node;" matTreeNodePadding
                      fxLayout="row" fxLayoutGap="8px"
@@ -26,11 +26,11 @@
           </mat-icon>
         </button>
         <span class="can-navigate" (click)="handleRoute(node)"
-              routerLink="{{node.route}}" routerLinkActive="active-link"
               matTreeNodeToggle>{{node.name}}</span>
       </mat-tree-node>
 
     </mat-tree>
+
   </div>
   <div fxFlex="80" class="content">
     <router-outlet></router-outlet>

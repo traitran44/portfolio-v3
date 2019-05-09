@@ -1,25 +1,61 @@
-<div fxLayout="column" fxLayoutGap="24px">
-  <div fxLayout="row">
-    <div fxFlex="70">
+<div fxLayout="column" fxLayoutGap="48px" class="intro-container">
+  <div fxLayout="row" style="height: 90vh;">
+    <div fxLayout="column" fxFlex="70" fxLayoutAlign="center">
       <h1 class="name">Trai Tran</h1>
       <h3 class="school">Georgia Institute of Technology</h3>
       <h4 class="major">B.S. of Computer Science </h4>
       <h4 class="focus-title">Focus: Artificial Intelligence, Simulation, and Systems/Networking</h4>
     </div>
-    <div fxFlex="30" fxLayoutAlign="center">
+    <div fxLayout="column" fxFlex="30" fxLayoutAlign="center">
       <img class="gt-icon" src="assets/gt-icon.png">
     </div>
   </div>
 
-  <div>
+
+  <mat-divider class="header-divider"></mat-divider>
+
+  <div class="introduction">
     <h1>Introduction</h1>
     <p>
-
+      I am a passionate Computer Science student. I love tinkering and solving problems in the domain of AI and Computer
+      Systems.
     </p>
+    <p>
+      Some of my projects that involve AI and Machine Learning includes:
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let proj of aiProj">
+        <a href="{{proj.route}}" target="_blank">
+          {{proj.name}}
+        </a>
+      </mat-list-item>
+    </mat-list>
+    <p>
+      I also have good background in Systems development such as:
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let proj of systemsProj">
+        <a href="{{proj.route}}" target="_blank">
+          {{proj.name}}
+        </a>
+      </mat-list-item>
+    </mat-list>
   </div>
+
+  <mat-divider class="intro-divider"></mat-divider>
 
   <div>
     <h1>Activities</h1>
+    <p>
+      I usually participate Hackathons to enhance my skills and networks. Some of the hackathons include:
+    </p>
+    <mat-list>
+      <mat-list-item *ngFor="let hack of hackathons">{{hack.name}}</mat-list-item>
+    </mat-list>
+    <p>
+      I also managed the Web development team in the Data Science club where we developed various website for
+      club's <a target="_blank" href="https://hacklytics.io">hackathon</a> and <a href="">marketing websites.</a>
+    </p>
   </div>
 
   <div>
