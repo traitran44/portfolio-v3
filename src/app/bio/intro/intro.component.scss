@@ -12,32 +12,37 @@
 }
 
 .gt-icon {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   border: lightgrey thin solid;
   -webkit-border-radius: 220px;
   -moz-border-radius: 220px;
   border-radius: 220px;
 }
 
-.header-divider {
+.up-divider {
   width: 100%;
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
   -ms-transform: rotate(-2deg);
   -o-transform: rotate(-2deg);
   transform: rotate(-2deg);
-  color: darkgrey;
+  color: #7a7a7a;
 }
 
-.intro-divider {
+
+.down-divider {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
   -ms-transform: rotate(2deg);
   -o-transform: rotate(2deg);
   transform: rotate(2deg);
-  color: darkgrey;
+  color: #7a7a7a;
 }
 
 .intro-container {
+}
+
+.star {
+  color: #e4e400;
 }

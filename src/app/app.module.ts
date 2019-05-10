@@ -12,7 +12,10 @@ import {AiModule} from './ai/ai.module';
 import {CompilerModule} from './compiler/compiler.module';
 import {SystemNetworkModule} from './system-network/system-network.module';
 import {PersonalProjModule} from './personal-proj/personal-proj.module';
-
+import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 @NgModule({
   declarations: [
     AppComponent
@@ -28,11 +31,17 @@ import {PersonalProjModule} from './personal-proj/personal-proj.module';
     SystemNetworkModule,
     PersonalProjModule,
 
+    PerfectScrollbarModule,
     AppRoutingModule,
     FlexLayoutModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

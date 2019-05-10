@@ -41,7 +41,7 @@ const TREE_DATA: Node[] = [
     route: 'work',
     children: [
       {
-        name: 'Macy\'s Technology',
+        name: 'Macy\'s Technology (Developer I)',
         route: '/work/macy-exp',
         children: []
       }
@@ -138,6 +138,9 @@ const TREE_DATA: Node[] = [
 })
 export class AppComponent {
 
+  scrollConfig = {
+
+  };
   treeControl = new FlatTreeControl<FlatNode>(node => node.level, node => node.expandable);
 
   treeFlattener = new MatTreeFlattener(

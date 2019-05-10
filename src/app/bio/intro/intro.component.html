@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutGap="48px" class="intro-container">
-  <div fxLayout="row" style="height: 90vh;">
+  <div fxLayout="row" style="height: 90vh;" class="home">
     <div fxLayout="column" fxFlex="70" fxLayoutAlign="center">
       <h1 class="name">Trai Tran</h1>
       <h3 class="school">Georgia Institute of Technology</h3>
@@ -11,60 +11,85 @@
     </div>
   </div>
 
-
-  <mat-divider class="header-divider"></mat-divider>
+  <mat-divider class="up-divider"></mat-divider>
 
   <div class="introduction">
-    <h1>Introduction</h1>
-    <p>
-      I am a passionate Computer Science student. I love tinkering and solving problems in the domain of AI and Computer
-      Systems.
-    </p>
-    <p>
-      Some of my projects that involve AI and Machine Learning includes:
-    </p>
-    <mat-list>
-      <mat-list-item *ngFor="let proj of aiProj">
-        <a href="{{proj.route}}" target="_blank">
-          {{proj.name}}
-        </a>
-      </mat-list-item>
-    </mat-list>
-    <p>
-      I also have good background in Systems development such as:
-    </p>
-    <mat-list>
-      <mat-list-item *ngFor="let proj of systemsProj">
-        <a href="{{proj.route}}" target="_blank">
-          {{proj.name}}
-        </a>
-      </mat-list-item>
-    </mat-list>
+    <div fxFlex="20" fxLayoutAlign="start start">
+      <mat-icon style="font-size: 180px">person</mat-icon>
+    </div>
+    <div fxFlex="80">
+      <h1>Introduction</h1>
+      <p>
+        I am a passionate Computer Science student.
+        I love tinkering and solving problems in the domain of AI and Computer Systems.
+      </p>
+      <p>
+        Some of my projects that involve AI and Machine Learning includes:
+      </p>
+      <mat-list>
+        <mat-list-item *ngFor="let proj of aiProj">
+          <a href="{{proj.route}}" target="_blank">
+            {{proj.name}}
+          </a>
+        </mat-list-item>
+      </mat-list>
+      <p>
+        I also have good background in Systems development such as:
+      </p>
+      <mat-list>
+        <mat-list-item *ngFor="let proj of systemsProj">
+          <a href="{{proj.route}}" target="_blank">
+            {{proj.name}}
+          </a>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </div>
 
-  <mat-divider class="intro-divider"></mat-divider>
+  <mat-divider class="down-divider"></mat-divider>
 
-  <div>
-    <h1>Activities</h1>
-    <p>
-      I usually participate Hackathons to enhance my skills and networks. Some of the hackathons include:
-    </p>
-    <mat-list>
-      <mat-list-item *ngFor="let hack of hackathons">{{hack.name}}</mat-list-item>
-    </mat-list>
-    <p>
-      I also managed the Web development team in the Data Science club where we developed various website for
-      club's <a target="_blank" href="https://hacklytics.io">hackathon</a> and <a href="">marketing websites.</a>
-    </p>
+  <div fxLayout="row" class="activities">
+    <div fxFlex="70">
+      <h1>Activities</h1>
+      <h3>Hackathon</h3>
+      <p>
+        I usually participate Hackathons to enhance my skills and networks. Some of the hackathons include:
+      </p>
+      <mat-list>
+        <mat-list-item *ngFor="let hack of hackathons">{{hack.name}}</mat-list-item>
+      </mat-list>
+      <h3>Data Science Club</h3>
+      <p>
+        I also managed the Web development team in the Data Science club where we developed various website for
+        club's <a target="_blank" href="https://hacklytics.io">hackathon</a> and <a href="">marketing websites.</a>
+      </p>
+    </div>
+
+    <div fxFlex="30" fxLayoutAlign="start center">
+      <mat-icon style="font-size: 180px">adb</mat-icon>
+    </div>
+
   </div>
 
-  <div>
-    <h1>Achievements</h1>
+  <mat-divider class="down-divider"></mat-divider>
+
+  <div class="achievement" fxLayout="column" fxLayoutGap="8px">
+    <h1>Achievements <span *ngFor="let indx of [1, 2, 3, 4, 5]" class="star"><mat-icon>star</mat-icon></span> </h1>
+    <div class="gt-hack">
+      <h3>Georgia Tech Computing Hackathon Winner 2018</h3>
+      <p>
+        Developed Philanthropic management platform that allows users to interact and communicate with homeless.
+      </p>
+    </div>
+    <div class="ds-manager">
+      <h3>Data Science Web Development Manager</h3>
+      <p>
+        Successfully delivered multiple websites for the organization.
+      </p>
+    </div>
   </div>
 
-  <div>
-    <h1>Others</h1>
-  </div>
+  <mat-divider class="up-divider"></mat-divider>
 </div>
 
 
