@@ -9,8 +9,8 @@
         <button mat-icon-button disabled></button>
         <mat-icon *ngIf="rlaLeaf.isActive" fxLayoutAlign="center center">code</mat-icon>
         <span (click)="handleRoute(node)"
-              routerLink="{{node.route}}" routerLinkActive="leaf-active-link" #rlaLeaf="routerLinkActive"
-              class="can-navigate">
+              routerLink="{{node.route}}" routerLinkActive="leaf-active-link"
+              #rlaLeaf="routerLinkActive" class="can-navigate">
           {{node.name}}
         </span>
       </mat-tree-node>

@@ -1,29 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {GameComponent} from './game/game.component';
-import {KnowledgeBasedComponent} from './knowledge-based/knowledge-based.component';
-import {RoboticComponent} from './robotic/robotic.component';
-import {AutoAlgoComponent} from './auto-algo/auto-algo.component';
 
+// @ts-ignore
 const routes: Routes = [
   {
     path: 'ai',
     children: [
       {
         path: 'game',
-        component: GameComponent
-      },
-      {
-        path: 'knowledge-based',
-        component: KnowledgeBasedComponent
+        loadChildren: () => import('./game/game.module').then(mod => mod.GameModule)
       },
       {
         path: 'robotic',
-        component: RoboticComponent
+        loadChildren: () => import('./robotic/robotic.module').then(mod => mod.RoboticModule)
       },
       {
         path: 'auto-algo',
-        component: AutoAlgoComponent
+        loadChildren: () => import('./auto-algo/auto-algo.module').then(mod => mod.AutoAlgoModule)
       },
       {
         path: '',

@@ -1,0 +1,32 @@
+<h2>
+  Navigation Mesh Generator
+</h2>
+<img src="assets/nav-mesh.PNG" class="center-img">
+<p>
+  This section will introduce on how to generate a navigation mesh for the AI agent to perform path finding.
+  <a href="https://github.com/MrTrai/game-ai/blob/master/homework3/mycreatepathnetwork.py"> Source Code </a>
+</p>
+<h2>What is a Nav Mesh?</h2>
+<p>
+  Most classic 2D games used the Grid system where the map is divided into a 2D grid/matrix.
+  Nav Mesh is a more optimized version where it produces less meshes compare to the Grid system.
+  Therefore, performing pathfinding is faster on Nav Mesh than on Grid system.
+</p>
+<ol>
+  <li>
+    In order for the agent to move from point A to point B, it first finds the 2 path edge corners nearest to A and
+    B, says C and D respectively, it then moves to point C.
+  </li>
+  <li>
+    The agent now performs a standard A* path finding to D given the network edges. It then follows the path to
+    point D and then move to B.
+  </li>
+</ol>
+<p>
+  The main goal of path network is to reduce the search space for path finding.
+  In games where performance is crucial, optimizing path finding run time is more important than ever.
+</p>
+<h2>Nav Mesh generator implementation</h2>
+<img src="assets/nav-mesh-code.PNG" class="center-img">
+
+
