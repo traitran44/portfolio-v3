@@ -1,3 +1,37 @@
-<p>
-  game works!
-</p>
+<app-content-container>
+  <div content-title>
+    <h1>
+      Game AI
+    </h1>
+  </div>
+  <div content-body>
+    <h2>
+      Path Network Navigation
+    </h2>
+    <img src="assets/ai-path-net.PNG" class="path-net-img">
+    <p>
+      This section will introduce on how to generate a path network for the AI agent to perform path finding.
+      <a href="https://github.com/MrTrai/game-ai/tree/master/homework2"> Source Code </a>
+    </p>
+    <h2>What is a path network?</h2>
+    <p>
+      A path network is a static network of path edges that allow the agent to move to any location in the game.
+    </p>
+    <ol>
+      <li>
+        In order for the agent to move from point A to point B, it first finds the 2 path edge corners nearest to A and
+        B, says C and D respectively, it then moves to point C.
+      </li>
+      <li>
+        The agent now performs a standard A* path finding to D given the network edges. It then follows the path to
+        point D and then move to B.
+      </li>
+    </ol>
+    <p>
+      The main goal of path network is to reduce the search space for path finding.
+      In games where performance is crucial, optimizing path finding run time is more important than ever.
+    </p>
+    <h2>Path Network Implementation</h2>
+    <img src="assets/path-net-code.PNG" class="center-img">
+  </div>
+</app-content-container>

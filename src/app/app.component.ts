@@ -52,11 +52,6 @@ const TREE_DATA: Node[] = [
     route: 'ai',
     children: [
       {
-        name: 'Knowledge-based AI',
-        route: 'ai/knowledge-based',
-        children: []
-      },
-      {
         name: 'Game AI',
         route: 'ai/game',
         children: []
@@ -67,7 +62,7 @@ const TREE_DATA: Node[] = [
         children: []
       },
       {
-        name: 'Automated Algorithm',
+        name: 'Automated Algorithm Design',
         route: 'ai/auto-algo',
         children: []
       }
@@ -78,7 +73,7 @@ const TREE_DATA: Node[] = [
     route: 'compiler',
     children: [
       {
-        name: 'MIPS Compiler',
+        name: 'TIGER Compiler',
         route: 'compiler/mips'
       },
       {
@@ -100,12 +95,7 @@ const TREE_DATA: Node[] = [
         name: 'Networking',
         route: 'systems/networking',
         children: []
-      },
-      {
-        name: 'Database System',
-        route: 'systems/database',
-        children: []
-      },
+      }
     ]
   },
   {

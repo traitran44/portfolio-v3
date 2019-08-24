@@ -28,7 +28,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'knowledge-based'
+        redirectTo: 'game'
       },
     ]
   }
