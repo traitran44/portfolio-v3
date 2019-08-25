@@ -12,21 +12,43 @@
   Nav Mesh is a more optimized version where it produces less meshes compare to the Grid system.
   Therefore, performing pathfinding is faster on Nav Mesh than on Grid system.
 </p>
+<h4>Algorithm</h4>
+<h4>Approach 1: Brute Force DFS</h4>
 <ol>
   <li>
-    In order for the agent to move from point A to point B, it first finds the 2 path edge corners nearest to A and
-    B, says C and D respectively, it then moves to point C.
+    Find all triangles form from all the points in the network
   </li>
   <li>
-    The agent now performs a standard A* path finding to D given the network edges. It then follows the path to
-    point D and then move to B.
+    Perform DFS to find the best combination of triangles.
+    <ol>
+      <li>
+        The goal condition is the mesh covers the whole map.
+      </li>
+      <li>
+        We would also like to pick the mesh where we can merge more triangles and produce more polys > 3 edges.
+      </li>
+    </ol>
+  </li>
+</ol>
+<h4>Approach 2: Greedy</h4>
+<ol>
+  <li>Find all triangles from all the points in the network.</li>
+  <li>Sort the triangles by area.</li>
+  <li>
+    Pick the largest triangle that can fit into the mesh until the whole mesh is formed.
+    <ul>
+      <li>
+        The goal condition is the mesh covers the whole map.
+      </li>
+      <li>
+        We would also like to pick the mesh where we can merge more triangles and produce more polys > 3 edges.
+      </li>
+    </ul>
   </li>
 </ol>
 <p>
-  The main goal of path network is to reduce the search space for path finding.
-  In games where performance is crucial, optimizing path finding run time is more important than ever.
 </p>
-<h2>Nav Mesh generator implementation</h2>
+<h4>Nav Mesh generator implementation (Brute force DFS)</h4>
 <img src="assets/nav-mesh-code.PNG" class="center-img">
 
 

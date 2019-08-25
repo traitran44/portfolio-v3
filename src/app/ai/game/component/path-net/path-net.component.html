@@ -10,20 +10,52 @@
 <p>
   A path network is a static network of path edges that allow the agent to move to any location in the game.
 </p>
+<h4>Generate the path network from a nav mesh</h4>
+<h4>Algorithm</h4>
+<h4>Approach 1: Centroid</h4>
 <ol>
   <li>
-    In order for the agent to move from point A to point B, it first finds the 2 path edge corners nearest to A and
-    B, says C and D respectively, it then moves to point C.
+    For each of the mesh in the nav mesh, find the centroid
   </li>
   <li>
-    The agent now performs a standard A* path finding to D given the network edges. It then follows the path to
-    point D and then move to B.
+    Connect each of the centroid to all the neighbors such that the path edge doesn't cut another object with
+    consideration of the agent's radius.
+  </li>
+</ol>
+<h4>Approach 2: Edge midpoint</h4>
+<ol>
+  <li>
+    For each of the line of each mesh in the nav mesh, find the midpoint
+  </li>
+  <li>
+    Connect each of the midpoint to all the neighbors such that the path edge doesn't cut another object with
+    consideration of the agent's radius.
+  </li>
+</ol>
+<p><strong>Note: </strong> From personal tests, I find the midpoint approach is better at producing a path net that can
+  cover the whole map.</p>
+<h4>
+  How is path network used?
+</h4>
+<ol>
+  <li>
+    In order for the agent to move from point A to point B, it first finds the 2 points nearest to A and
+    B from the path network, says C and D respectively.
+  </li>
+  <li>
+    Move the agent from A to C
+  </li>
+  <li>
+    The agent now performs a standard A* path finding to D given the network edges.
+  </li>
+  <li>
+    It then follows the path to point D and finally moves to B.
   </li>
 </ol>
 <p>
   The main goal of path network is to reduce the search space for path finding.
   In games where performance is crucial, optimizing path finding run time is more important than ever.
 </p>
-<h2>Path Network Implementation</h2>
+<h4>Path Network Implementation</h4>
 <img src="assets/path-net-code.PNG" class="center-img">
 
